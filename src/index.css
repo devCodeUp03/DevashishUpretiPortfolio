@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900 dark:bg-dark-bg dark:text-white font-sans antialiased transition-colors duration-300;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-6 sm:px-10 lg:px-16;
+    /* Increased padding */
+  }
+
+  .btn-primary {
+    @apply bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-black transition-all duration-300 font-medium tracking-wide;
+  }
+}
