@@ -18,6 +18,15 @@ const ContactForm = () => {
         const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
         const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+        console.log(SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY);
+
+        // Debug: Log credentials (redacted for security)
+        console.log('EmailJS Configuration:', {
+            serviceId: SERVICE_ID ? `${SERVICE_ID.substring(0, 8)}...` : 'MISSING',
+            templateId: TEMPLATE_ID ? `${TEMPLATE_ID.substring(0, 9)}...` : 'MISSING',
+            publicKey: PUBLIC_KEY ? `${PUBLIC_KEY.substring(0, 8)}...` : 'MISSING'
+        });
+
         // DEMO MODE: If keys are missing, simulate a successful send
         if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY || SERVICE_ID === 'your_service_id_here') {
             console.warn("EmailJS keys missing. Running in DEMO mode.");
@@ -31,14 +40,37 @@ const ContactForm = () => {
 
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form.current, PUBLIC_KEY)
             .then((result) => {
-                console.log(result.text);
+                console.log('✅ Email sent successfully:', result.text);
                 setStatus('success');
                 form.current.reset();
                 setTimeout(() => setStatus('idle'), 3000);
             }, (error) => {
-                console.log(error.text);
+                console.error('❌ EmailJS Error - Full Details:', {
+                    status: error.status,
+                    text: error.text,
+                    fullError: error
+                });
+
+                // Log the exact error message
+                console.error('Error Message:', error.text || error.message || 'Unknown error');
+
+                // Provide specific error guidance
+                if (error.text && error.text.includes('service')) {
+                    console.error('🔍 Service ID Error: Please verify your service ID at https://dashboard.emailjs.com/admin');
+                    console.error('Current Service ID:', SERVICE_ID);
+                } else if (error.text && error.text.includes('template')) {
+                    console.error('🔍 Template ID Error: Please verify your template ID at https://dashboard.emailjs.com/admin');
+                    console.error('Current Template ID:', TEMPLATE_ID);
+                } else if (error.text && error.text.includes('public')) {
+                    console.error('🔍 Public Key Error: Please verify your public key at https://dashboard.emailjs.com/admin/account');
+                    console.error('Current Public Key:', PUBLIC_KEY);
+                } else {
+                    console.error('🔍 Unknown Error - Check all credentials at https://dashboard.emailjs.com/admin');
+                    console.error('Credentials being used:', { SERVICE_ID, TEMPLATE_ID, PUBLIC_KEY });
+                }
+
                 setStatus('error');
-                setTimeout(() => setStatus('idle'), 3000);
+                setTimeout(() => setStatus('idle'), 5000);
             });
     };
 
