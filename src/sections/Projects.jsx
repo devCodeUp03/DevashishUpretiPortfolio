@@ -20,7 +20,7 @@ const Projects = () => {
                     className="text-center mb-16"
                 >
                     <SectionTitle title="Projects" highlight="I have done" />
-                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                    <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto text-center">
                         Here are some of the projects I've worked on, showcasing my expertise in Full Stack Development.
                     </p>
                 </motion.div>
