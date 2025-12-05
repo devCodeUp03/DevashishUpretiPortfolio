@@ -12,10 +12,10 @@ const Footer = () => {
 
     return (
         <footer className="bg-gradient-to-r from-[#01cdba] to-[#01cfbb] text-black py-8 relative z-10">
-            <div className="container-custom flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="container-custom flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
 
                 {/* Copyright & Name */}
-                <div className="text-center md:text-left font-medium">
+                <div className="font-medium">
                     <p>© {new Date().getFullYear()} <span className="font-bold uppercase tracking-wider">{personalInfo.name}</span>. All rights reserved.</p>
                 </div>
 
