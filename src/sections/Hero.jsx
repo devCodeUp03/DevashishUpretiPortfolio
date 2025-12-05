@@ -35,7 +35,7 @@ const Hero = () => {
                         {personalInfo.bio}
                     </p>
 
-                    <div className="pt-4">
+                    <div className="pt-4 flex flex-wrap gap-4">
                         <a
                             href={personalInfo.socials.whatsapp}
                             target="_blank"
@@ -43,6 +43,13 @@ const Hero = () => {
                             className="inline-block bg-primary text-black font-bold px-8 py-3 rounded-md hover:bg-black hover:text-white dark:hover:bg-white dark:hover:text-black transition-colors uppercase text-sm tracking-wider"
                         >
                             Let's Chat!
+                        </a>
+                        <a
+                            href="/assets/DevashishUpreti.pdf"
+                            download="DevashishUpreti.pdf"
+                            className="inline-block bg-transparent border-2 border-primary text-primary font-bold px-8 py-3 rounded-md hover:bg-primary hover:text-black transition-colors uppercase text-sm tracking-wider"
+                        >
+                            Download CV
                         </a>
                     </div>
 
