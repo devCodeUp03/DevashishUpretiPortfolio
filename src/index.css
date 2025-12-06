@@ -26,3 +26,34 @@
     @apply bg-transparent border-2 border-primary text-primary px-8 py-3 rounded-full hover:bg-primary hover:text-black transition-all duration-300 font-medium tracking-wide;
   }
 }
+
+@layer utilities {
+  /* Gradient animation for typing text */
+  @keyframes gradient-x {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient-x {
+    background-size: 200% 200%;
+    animation: gradient-x 3s ease infinite;
+  }
+
+  /* Smooth cursor blink */
+  @keyframes blink {
+    0%, 49% {
+      opacity: 1;
+    }
+    50%, 100% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 1s ease-in-out infinite;
+  }
+}

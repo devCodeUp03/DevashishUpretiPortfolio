@@ -11,14 +11,14 @@ const Hero = () => {
         "Critical Thinker",
         "Logical Thinker",
         "Fast Learner",
-        "Detail-Oriented",
+        "Detail Oriented",
         "Strong Debugger",
         "Clean Code Writer",
-        "Solution-Focused",
+        "Solution Focused",
         "Analytical Mindset",
         "Continuous Learner",
         "Systems Thinker",
-        "Performance-Oriented",
+        "Performance Oriented",
         "Writes Maintainable Code",
         "Breaks Down Complexity",
         "Thinks Before Coding"
@@ -50,8 +50,11 @@ const Hero = () => {
                         <span className="text-primary text-xl md:text-2xl font-medium tracking-widest block mt-2">
                             {personalInfo.role}
                         </span>
-                        <span className="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-normal tracking-normal block mt-3 min-h-[2rem]">
-                            {typedText}<span className="animate-pulse text-primary">|</span>
+                        <span className="normal-case text-lg md:text-xl font-semibold tracking-wide block mt-4 min-h-[2.5rem] bg-gradient-to-r from-primary via-emerald-500 to-primary bg-clip-text text-transparent animate-gradient-x">
+                            <span className="inline-block transition-all duration-300 ease-in-out">
+                                {typedText}
+                            </span>
+                            <span className="inline-block w-[3px] h-5 md:h-6 ml-1 bg-gradient-to-b from-primary to-emerald-500 animate-blink shadow-lg shadow-primary/50"></span>
                         </span>
                     </h1>
 
