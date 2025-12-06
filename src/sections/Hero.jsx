@@ -3,8 +3,29 @@ import { motion } from 'framer-motion';
 import HexagonImage from '../components/HexagonImage';
 import { personalInfo } from '../data/portfolio';
 import { slideUp, scaleUp } from '../utils/animations';
+import useTypingEffect from '../hooks/useTypingEffect';
 
 const Hero = () => {
+    const qualities = [
+        "Problem Solver",
+        "Critical Thinker",
+        "Logical Thinker",
+        "Fast Learner",
+        "Detail-Oriented",
+        "Strong Debugger",
+        "Clean Code Writer",
+        "Solution-Focused",
+        "Analytical Mindset",
+        "Continuous Learner",
+        "Systems Thinker",
+        "Performance-Oriented",
+        "Writes Maintainable Code",
+        "Breaks Down Complexity",
+        "Thinks Before Coding"
+    ];
+
+    const typedText = useTypingEffect(qualities, 80, 40, 1500);
+
     return (
         <section id="home" className="min-h-screen pt-20 flex items-center relative overflow-hidden transition-colors duration-300">
             {/* Background Gradients */}
@@ -28,6 +49,9 @@ const Hero = () => {
                         {personalInfo.name} <br />
                         <span className="text-primary text-xl md:text-2xl font-medium tracking-widest block mt-2">
                             {personalInfo.role}
+                        </span>
+                        <span className="text-gray-600 dark:text-gray-400 text-lg md:text-xl font-normal tracking-normal block mt-3 min-h-[2rem]">
+                            {typedText}<span className="animate-pulse text-primary">|</span>
                         </span>
                     </h1>
 
