@@ -56,7 +56,7 @@ export const projects = [
         technologies: ["React", "Vite", "Tailwind", "Node.js", "Express", "MongoDB", "JWT", "Axios", "Stripe API"],
         links: {
             frontend: "https://github.com/devCodeUp03/kapada-frontend", // Add your Frontend GitHub Link
-            backend: "#", // Add your Backend GitHub Link
+            backend: "https://github.com/devCodeUp03/kapada-backend", // Add your Backend GitHub Link
             admin: "#",   // Add your Admin GitHub Link
             live: "https://kapada-frontend.vercel.app/"     // Add Live Demo Link if available
         }
@@ -69,7 +69,7 @@ export const projects = [
         category: "Full Stack",
         links: {
             frontend: "https://github.com/devCodeUp03/unwindcabins-frontend", // Add your Frontend GitHub Link
-            backend: "#", // Add your Backend GitHub Link
+            backend: "https://github.com/devCodeUp03/unwindcabins-backend", // Add your Backend GitHub Link
             live: "https://unwindcabins.netlify.app/"     // Add Live Demo Link if available
         }
     }
