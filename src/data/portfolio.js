@@ -42,7 +42,7 @@ export const experience = [
     {
         company: "Yuga Yatra Retail Pvt. Ltd",
         role: "Software Engineer Intern",
-        period: "Dec 1, 2025 - Present",
+        period: "Dec 1, 2025 - March 1, 2026",
         description: "Contributing to impactful, real-world projects in a collaborative environment."
     }
 ];

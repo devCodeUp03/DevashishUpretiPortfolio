@@ -72,8 +72,8 @@ const Hero = () => {
                             Let's Chat!
                         </a>
                         <a
-                            href="/assets/DevashishUpreti.pdf"
-                            download="DevashishUpreti.pdf"
+                            href="/assets/DevashishUpretiResume.pdf"
+                            download="DevashishUpretiResume.pdf"
                             className="inline-block bg-transparent border-2 border-primary text-primary font-bold px-8 py-3 rounded-md hover:bg-primary hover:text-black transition-colors uppercase text-sm tracking-wider"
                         >
                             Download CV
